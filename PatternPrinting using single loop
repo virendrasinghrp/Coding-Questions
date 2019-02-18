@@ -74,6 +74,7 @@ class Test{
     	
     	Scanner sc = new Scanner(System.in); 
         int n = sc.nextInt();
+        n+=1;
         int len=2*n-3;
         for(int i=1;i<n;){
             
