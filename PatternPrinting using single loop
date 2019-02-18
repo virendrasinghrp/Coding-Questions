@@ -55,3 +55,52 @@ class Test{
         }
     }
 }
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+/*
+Program to print following pattern using a single loop.
+*     *
+**   **
+*** ***
+*******
+
+*/
+
+import java.util.Scanner;
+class Test{
+    static int j=0;
+    public static void main(String args[]){
+    	
+    	Scanner sc = new Scanner(System.in); 
+        int n = sc.nextInt();
+        int len=2*n-3;
+        for(int i=1;i<n;){
+            
+            if(i>j){
+                System.out.print("*");
+                j++;
+            }
+            else if(i==j || j<=(len-i)){
+            	if(i==len/2 +1){
+            		System.out.print("*");
+                	j++;
+            	}
+            	else{
+            		System.out.print(" ");
+            		j++;
+            	}
+            }
+            else if(j>(len-i) && j<=len){
+            	System.out.print("*");
+                j++;
+            }
+            else{
+                i++;
+                System.out.println("");
+                j=0;
+            }
+            
+        }
+    }
+}
