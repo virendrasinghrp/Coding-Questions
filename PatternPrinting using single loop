@@ -39,7 +39,6 @@ Program to print following pattern using a single loop.
 
 class Test{
     static int j=0;
-    static int n=1;
     public static void main(String args[]){
         for(int i=1;i<5;){
             
