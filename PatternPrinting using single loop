@@ -26,3 +26,33 @@ class Test{
         }
     }
 }
+
+//////////////////////////////////////////////////////////////////////////////////////
+/*
+Program to print following pattern using a single loop.
+*
+* *
+* * *
+* * * *
+
+*/
+
+class Test{
+    static int j=0;
+    static int n=1;
+    public static void main(String args[]){
+        for(int i=1;i<5;){
+            
+            if(i>j){
+                System.out.print("*"+" ");
+                j++;
+            }
+            else{
+                i++;
+                System.out.println("");
+                j=0;
+            }
+            
+        }
+    }
+}
