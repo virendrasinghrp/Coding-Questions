@@ -1,0 +1,28 @@
+/*
+Program to print following pattern using a single loop.
+1
+2 3
+4 5 6
+7 8 9 10
+
+*/
+class Test{
+    static int j=0;
+    static int n=1;
+    public static void main(String args[]){
+        for(int i=1;i<5;){
+           
+            if(i>j){
+                System.out.print(n+" ");
+                j++;
+                n++;
+            }
+            else{
+                i++;
+                System.out.println("");
+                j=0;
+            }
+           
+        }
+    }
+}
