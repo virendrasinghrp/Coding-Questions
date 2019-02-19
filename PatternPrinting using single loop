@@ -105,3 +105,44 @@ class Test{
         }
     }
 }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
+Program to print following pattern using a single loop.
+*      *
+**    **
+***  ***
+********
+
+*/
+
+import java.util.Scanner;
+class Test{
+    static int j=1;
+    public static void main(String args[]){
+       
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for(int i=1;i<=n;){
+           
+            if(i>=j){
+                System.out.print("*");
+                j++;
+            }
+            else if(i>j || j<=(2*n-i)){
+                
+                    System.out.print(" ");
+                    j++;
+            }
+            else if(j>(2*n-i) && j<=2*n){
+                System.out.print("*");
+                j++;
+            }
+            else{
+                i++;
+                System.out.println("");
+                j=1;
+            }
+           
+        }
+    }
+}
