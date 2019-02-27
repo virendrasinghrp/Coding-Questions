@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class ArrayR {
+	public static void main (String[] args) {
+		//code
+		Scanner scan=new Scanner(System.in);
+		int T=scan.nextInt();//No. of Test Cases
+		//int[] output=new int[T];//storing output(first element) after rotate for T testcases
+		for(int i=0;i<T;i++){
+		    int N=scan.nextInt();//size of array
+		    int[] A=new int[N];
+		    for(int j=0;j<N;j++){//array elements
+		        A[j]=scan.nextInt();
+		    }
+		    int d=scan.nextInt();//shift the array d times
+		    rotate(A,N,d);
+		  //printing output array
+			for (int element: A) {
+	            System.out.print(element+" ");
+	        }
+            System.out.println("");
+		}
+		
+		
+		scan.close();
+	}
+	
+	public static void rotate(int arr[],int size,int d){
+		for(int i=0;i<d;i++){
+			leftRotatebyOne(arr,size);
+		}
+	}
+	public static void leftRotatebyOne(int arr[], int n) 
+    { 
+    	int temp; 
+        temp = arr[0]; 
+        for (int i=0; i<n-1;i++){ 
+            arr[i] = arr[i+1];
+        }
+        arr[n-1] = temp; 
+    }
+
+}
