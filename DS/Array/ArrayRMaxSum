@@ -1,0 +1,40 @@
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///The below code is not complet.Here I only gave the code for the "max_sum()" function.User Input and all the other code is not written here
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+class GfG
+{
+    int max_sum(int A[], int n)
+    {
+	// Your code here
+	int max=0;
+	int k=0;
+	for(int i=0;i<n;i++){
+	   rotate(A,n);
+	   k=sum(A,n);
+	   if(max<=k){
+	       max=k;
+	   }
+	}
+	return max;
+	
+    }
+    void rotate(int[] arr,int n){
+        int temp; 
+        temp = arr[0]; 
+        for (int i=0; i<n-1;i++){ 
+            arr[i] = arr[i+1];
+        }
+        arr[n-1] = temp; 
+    }
+    int sum(int[] arr,int n){
+        int temp=0;
+        for(int i=0;i<n;i++){
+            temp+=i*arr[i];
+        }
+        return temp;
+    }
+}
