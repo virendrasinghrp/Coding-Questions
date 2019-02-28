@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class ArrayRJuggle {
+	public static void main (String[] args) {
+		//code
+		Scanner scan=new Scanner(System.in);
+		int T=scan.nextInt();//No. of Test Cases
+		//int[] output=new int[T];//storing output(first element) after rotate for T testcases
+		for(int i=0;i<T;i++){
+		    int N=scan.nextInt();//size of array
+		    int d=scan.nextInt();//shift the array d times
+		    int[] A=new int[N];
+		    for(int j=0;j<N;j++){//array elements
+		        A[j]=scan.nextInt();
+		    }
+		    
+		    jugglerotate(A,N,d);
+		  //printing output array
+			for (int element: A) {
+	            System.out.print(element+" ");
+	        }
+            System.out.println("");
+		}
+		
+		
+		scan.close();
+	}
+	
+	public static void jugglerotate(int arr[],int size,int d){
+		for(int i=0;i<gcd(d,size);i++){
+			int temp=arr[i];
+			int j=i;
+			while(true){
+				int k=j+d;
+				if(k>=size)
+					k=k-size;
+				if(k==i)
+					break;
+				arr[j]=arr[k];
+				j=k;
+			}
+			arr[j]=temp;
+		}
+	}
+	public static int gcd(int a, int b){
+		if(b==0)
+			return a;
+		else
+			return gcd(b,a%b);
+	}
+	
+}
