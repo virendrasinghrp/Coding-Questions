@@ -1,0 +1,51 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class ArrayRCheckN {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		String t = br.readLine();
+		int T=Integer.parseInt(t.trim());
+		int output[]=new int[T];
+		for(int i=0;i<T;i++){
+			String n = br.readLine();
+			int N=Integer.parseInt(n.trim());
+			
+		    long[] A=new long[N];
+
+		    int k=0;
+		    for(String str : br.readLine().split(" ")){
+		        A[k] = Long.parseLong(str.trim());
+		        k++;
+		   }
+		    
+		    //Loop for T Test cases
+		    output[i]=findKRotation(A,N);
+		    
+		}
+		
+		//printing output
+		for (int element: output) {
+            System.out.println(element);
+        }
+		
+	}
+	
+	public static int findKRotation(long[] A,int N){
+		int flag=0;
+		for(int i=0;i<N-1;i++){
+			if(A[i]>A[i+1]){
+				flag=i+1;
+				break;
+			}
+				
+		}
+		return flag;
+	}
+	
+	
+
+}
