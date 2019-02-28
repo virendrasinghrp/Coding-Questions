@@ -1,0 +1,52 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+
+public class ArrayFindNum {
+	public static void main (String[] args) throws IOException {
+		//code
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 
+		int T=Integer.parseInt(br.readLine()); //No. of Test Cases
+		int output[]=new int[T];
+		for(int i=0;i<T;i++){
+			int N=Integer.parseInt(br.readLine());
+			
+		    int[] A=new int[N];
+
+		    int k=0;
+		    for(String str : br.readLine().split(" ")){
+		        A[k] = Integer.parseInt(str.trim());
+		        k++;
+		   }
+		    int X=Integer.parseInt(br.readLine());
+		    
+		    //Find Element X in the Array A
+		    output[i]=findElement(A,X,N);
+		   
+		}
+		
+		//printing Output
+		for (int element: output) {
+            System.out.println(element);
+        }
+		
+	}
+	
+	public static int findElement(int[] A,int X,int N){
+		int k=0;
+		for(int i=0;i<N;i++){
+			if(A[i]==X){
+				k=i;
+			
+			}
+			else if(i==(N-1)& k==0){
+				k=-1;
+			}
+			
+		}
+		return k;
+	}
+	
+
+}
