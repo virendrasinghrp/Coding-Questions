@@ -1,0 +1,66 @@
+////////////////Optimized using Buffer Reader//////////////////////
+//////////////As Scanner is slow//////////////////////////////////
+
+
+
+
+import java.util.*;
+import java.io.*; 
+
+public class ArrayRoptimized {
+	public static void main (String[] args) throws IOException {
+		//code
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 
+		int T=Integer.parseInt(br.readLine()); //No. of Test Cases
+		for(int i=0;i<T;i++){
+
+			int[] B=new int[2];
+			 int p=0;
+			    for(String str : br.readLine().split(" ")){
+			        B[p] = Integer.parseInt(str.trim());
+			        p++;
+			   }
+			
+		    int[] A=new int[B[0]];
+
+		    int k=0;
+		    for(String str : br.readLine().split(" ")){
+		        A[k] = Integer.parseInt(str.trim());
+		        k++;
+		   }
+		   
+		    jugglerotate(A,B[0],B[1]);
+		  //printing output array
+			for (int element: A) {
+	            System.out.print(element+" ");
+	        }
+            System.out.println("");
+		}
+		
+		
+	}
+	
+	public static void jugglerotate(int arr[],int size,int d){
+		for(int i=0;i<gcd(d,size);i++){
+			int temp=arr[i];
+			int j=i;
+			while(true){
+				int k=j+d;
+				if(k>=size)
+					k=k-size;
+				if(k==i)
+					break;
+				arr[j]=arr[k];
+				j=k;
+			}
+			arr[j]=temp;
+		}
+	}
+	public static int gcd(int a, int b){
+		if(b==0)
+			return a;
+		else
+			return gcd(b,a%b);
+	}
+	
+}
