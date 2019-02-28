@@ -66,3 +66,37 @@ Testcase 2: A = {1, 2, 3, 4, 5, 6}. Rotate the array clockwise i.e. after rotati
 element that is {5} so A = {6, 1, 2, 3, 4}. Again rotate the array for the second time and deletes the second last element that is {2}
 so A = {4, 6, 1, 3}, doing these steps when he reaches 4th time, 4th last element does not exists so he deletes 1st element ie {1}
 so A={3, 6}. So continuing this procedure the last element in A is {3}, so outputp will be 3.
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ROTATE ARRAY OPTIMIZED USING 'JUGGLING' AND 'BUFFER READER'
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Given an array of size N, rotate it by D elements. 
+
+Input: 
+The first line of the input contains T denoting the number of testcases. First line of test case is the number of elements N, next line contains D. Subsequent line will be the array elements.
+
+Output: 
+For each testcase, in a new line, output the rotated array.
+
+Constraints:
+1 <= T <= 200
+1 <= N <= 107
+1 <= D <= N
+1 <= arr[i] <= 103
+
+Example:
+Input:
+2
+5 2
+1 2 3 4 5 
+10 3
+2 4 6 8 10 12 14 16 18 20
+
+Output:
+3 4 5 1 2
+8 10 12 14 16 18 20 2 4 6
+
+Explanation :
+Testcase 1: 1 2 3 4 5  when rotated by 2 elements, it becomes 3 4 5 1 2
