@@ -1,0 +1,55 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+public class ArrayReorg {
+
+	public static void main(String[] args)throws IOException {
+		// TODO Auto-generated method stub
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		int T=Integer.parseInt(br.readLine());
+		//int[] output= new int[T];
+		for(int i=0; i<T;i++){
+			int N=Integer.parseInt(br.readLine());
+			long[] A=new long[N];
+			int k=0;
+			for(String str: br.readLine().split(" ")){
+				A[k]=Long.parseLong(str.trim());
+				k++;
+			}
+			A=findAndSort(A,N);
+		
+		// Using string buffer to append each output in a string 
+		StringBuffer sb = new StringBuffer(); 
+		for (long element:A) 
+		    sb.append(element + " "); 
+
+		// finally printing the string 
+		System.out.println(sb); 
+		} 
+		br.close(); 	
+	}
+	
+	public static long[] findAndSort(long[] arr,int N){
+		long[] temp=arr.clone();
+		for(int i=0;i<N;i++){
+			if(search(arr,N,i)>0)
+				temp[i]=i;
+			else
+				temp[i]=-1;
+		}
+		return temp;
+	}
+	public static int search(long[] arr,int N,int i){
+		int count=0;
+		for(int m=0;m<N;m++){
+			if(arr[m]==i){
+				count++;
+			}
+			
+		}
+		return count;
+		
+	}
+
+}
+
