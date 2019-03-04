@@ -1,0 +1,41 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+public class Rough {
+
+	public static void main(String[] args)throws IOException {
+		// TODO Auto-generated method stub
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		int T=Integer.parseInt(br.readLine());
+		//int[] output= new int[T];
+		for(int i=0; i<T;i++){
+			int N=Integer.parseInt(br.readLine());
+			int[] A=new int[N];
+			int[] temp=new int[N];
+			int k=0;
+			for(String str: br.readLine().split(" ")){
+				A[k]=Integer.parseInt(str.trim());
+				temp[k]=-1;
+				k++;
+			}
+			A=findAndSort(A,temp,N);
+			//printing the output
+			for(int element:A){
+				System.out.print(element+" ");
+			}
+			System.out.println("");
+		}		
+
+	}
+	
+	
+	public static int[] findAndSort(int[] arr,int[] temp,int N){
+		for(int i=0;i<N;i++){
+			if(arr[i]!=-1)
+				temp[arr[i]]=arr[i];
+		}
+		return temp;
+	}
+
+
+}
